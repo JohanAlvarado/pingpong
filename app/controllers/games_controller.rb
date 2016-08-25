@@ -25,6 +25,7 @@ class GamesController < ApplicationController
     @game.user = current_user
 
     if @game.save
+      current_user.update_rating! @game
       redirect_to history_path, notice: 'Game was successfully created.'
     else
       render :new

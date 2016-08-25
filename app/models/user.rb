@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :registerable, :trackable, :validatable
+  include Rankeable
 
-  #has_many :games
-  #has_many :opponent_games, class_name: 'Game', inverse_of: :opponent
+  devise :database_authenticatable, :registerable, :trackable, :validatable
 
   scope :opponents, ->(user) { where.not(id: user) }
 
