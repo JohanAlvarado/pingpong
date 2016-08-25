@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   scope :opponents, ->(user) { where.not(id: user) }
 
   def to_s
-    email
+    email.split("@").first.titleize
   end
 
   def games

@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails',        '4.2.3'
 group :development, :test do
   gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'shoulda'
 end
 group :production do
   gem 'pg', '0.15.1'
